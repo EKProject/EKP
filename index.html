@@ -4,21 +4,85 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+     <!-- Font Awesome CSS -->
+     <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">        
+     <!-- Latest compiled and minified Bootstrap CSS -->
+     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+     <!-- jQuery library -->
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+     <!-- Latest compiled Bootstrap JavaScript -->
+     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+     <!-- Google font -->
+     <link href="https://fonts.googleapis.com/css?family=Raleway|Rancho" rel="stylesheet">
     <title>EKP</title>
     <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans:400,600" rel="stylesheet">
     <link rel="stylesheet" href="dist/css/style.css">
 	<script src="https://unpkg.com/animejs@3.0.1/lib/anime.min.js"></script>
     <script src="https://unpkg.com/scrollreveal@4.0.0/dist/scrollreveal.min.js"></script>
+    <script src="jquery.min.js"></script>
+    <script type="text/javascript">
+        var arrLang = new Array();
+        arrLang['en'] = new Array();
+        arrLang['km'] = new Array();
+    
+        // English content
+        arrLang['en']['english'] = 'English';
+        arrLang['en']['spanish'] = 'Spanish';
+        arrLang['en']['project'] = 'VR EKP PROJECT';
+        arrLang['en']['lookingFor'] = 'What we\'re looking for?';
+        arrLang['en']['necesidad'] = 'We need to create a software like a \'video game\', where we can move a 3D character using virtual reality sensors';
+        arrLang['en']['aquiEncontrar'] = 'Here you can find an example of software similar to what we are looking for, even though this system does not meet our expectations';
+        arrLang['en']['programRequirements'] = 'Program requirements';
+        arrLang['en']['loadScenarios'] = 'Load different scenarios';
+        arrLang['en']['freeWill'] = 'Free will of the character';
+        arrLang['en']['interactWithObjects'] = 'Interact with objects';
+        arrLang['en']['interface'] = 'Interface to make changes to the model in a simple and intuitive way';
+        arrLang['en']['camera'] = 'There should be a camera that you can move to show the different shots and sequences';
+        arrLang['en']['polygon'] = 'That admits a high number of polygons, to make decorations and models well worked and defined';
+        arrLang['en']['workWithUs'] = 'Do you want to work with us?';
+        arrLang['en']['contactUs'] = 'Contact Us';
+        // Spanish content
+        arrLang['km']['english'] = 'Inglés';
+        arrLang['km']['spanish'] = 'Español';
+        arrLang['km']['project'] = 'PROYECTO VR EKP';
+        arrLang['km']['lookingFor'] = '¿Qué necesitamos exactamente?';
+        arrLang['km']['necesidad'] = 'Necesitamos crear un software a modo de \'videojuego\', donde podamos mover un personaje 3D haciendo uso de sensores de realidad virtual';
+        arrLang['km']['aquiEncontrar'] = 'Aquí puedes encontrar un ejemplo de software parecido a lo que nosotros buscamos, pese a que este sistema no cumple nuestras expectativas';
+        arrLang['km']['programRequirements'] = 'Requisitos del programa';
+        arrLang['km']['loadScenarios'] = 'Cargar diferentes escenarios';
+        arrLang['km']['freeWill'] = 'Libre albedrío del personaje, en la medida de lo posible';
+        arrLang['km']['interactWithObjects'] = 'Interactuar con objetos diseñados para tal fins';
+        arrLang['km']['interface'] = 'Interfaz donde realizar los cambios al modelo de forma sencilla e intuitiva';
+        arrLang['km']['camera'] = 'Debe haber una cámara que puedas mover para mostrar los distintos planos y secuencias';
+        arrLang['km']['polygon'] = 'Que admite un número alto de polígonos, para hacer decorados y modelos bien trabajados y definidos';
+        arrLang['km']['workWithUs'] = '¿Quiéres trabajar con nosotros?';
+        arrLang['km']['contactUs'] = 'Contáctanos';
+        // Process translation
+        $(function() {
+          $('.translate').click(function() {
+            var lang = $(this).attr('id');
+    
+            $('.lang').each(function(index, item) {
+              $(this).text(arrLang[lang][$(this).attr('key')]);
+            });
+          });
+        });
+      </script>
 </head>
 <body class="is-boxed has-animations">
     <div class="body-wrap">
+
         <header class="site-header">
             <div class="container">
                 <div class="site-header-inner">
                     <div class="brand header-brand">
                         <h1 class="m-0">
-                            <img class="header-logo-image" src="dist/images/vr.png" alt="Logo" width="70px" height="70px" style="filter: invert(100%);-webkit-filter: invert(80%);">
+                          <img class="header-logo-image" src="dist/images/vr.png" alt="Logo" width="70px" height="70px" style="filter: invert(100%);-webkit-filter: invert(80%);">
                         </h1>
+                    </div>
+                    <div style="text-align: right;">
+                        <button id="en" style="font-size: 15px" class="translate lang" key="english">English</button>
+                        <button id="km" style="font-size: 15px" class="translate lang" key="spanish">Spanish</button>
                     </div>
                 </div>
             </div>
@@ -29,10 +93,10 @@
                 <div class="container">
                     <div class="hero-inner">
 						<div class="hero-copy">
-                            <h1 class="hero-title mt-0">PROYECTO VR EKP</h1>
-                            <h5 class="hero-title mt-0">¿Qué necesitamos exactamente?</h5>
-                            <p class="hero-paragraph">Necesitamos crear un software a modo de 'videojuego', donde podamos mover un personaje 3D haciendo uso de sensores de realidad virtual</p>
-                            <p>Aquí puedes encontrar un ejemplo de software parecido a lo que nosotros buscamos, pese a que este sistema no cumple nuestras expectativas</p>
+                            <h1 class="hero-title mt-0 lang" key="project">PROJECT VR EKP</h1>
+                            <h5 class="hero-title mt-0 lang" key="lookingFor">What we're looking for?</h5>
+                            <p class="hero-paragraph lang" key="necesidad">We need to create a software like a 'video game', where we can move a 3D character using virtual reality sensors</p>
+                            <p class="lang" key="aquiEncontrar">Here you can find an example of software similar to what we are looking for, even though this system does not meet our expectations</p>
                             <div class="hero-cta"><a class="button button-primary" href="http://deatrathias.net/TW/">Tracking World</a></div>
                             <iframe style="margin-top: 30px;" height="300px" width="100%" src="https://www.youtube.com/embed/r0C1El9Alh4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 						</div>
@@ -57,7 +121,7 @@
 
             <section class="features section" style="margin-top: 100px;">
                 <div class="container">
-                    <h1 class="hero-title mt-0">Requisitos del programa</h1>
+                    <h1 class="hero-title mt-0 lang" key="programRequirements">Program requirements</h1>
 					<div class="features-inner section-inner has-bottom-divider">
                         <div class="features-wrap">
                             <div class="feature text-center is-revealing">
@@ -65,7 +129,7 @@
                                     <div class="feature-icon" style="height: 300px;">
 										<img src="dist/images/room.png" alt="Feature 01">
                                     </div>
-                                    <h4 class="feature-title mt-24">Cargar diferentes escenarios</h4>
+                                    <h4 class="feature-title mt-24 lang" key="loadScenarios">Load different scenarios</h4>
                                 </div>
                             </div>
 							<div class="feature text-center is-revealing">
@@ -73,7 +137,7 @@
                                     <div class="feature-icon" style="height: 300px;">
 										<img src="dist/images/albedrio.png" alt="Feature 02">
                                     </div>
-                                    <h4 class="feature-title mt-24">Libre albedrío del personaje, en medida de lo posible</h4>
+                                    <h4 class="feature-title mt-24 lang" key="freeWill">Free will of the character</h4>
                                 </div>
                             </div>
                             <div class="feature text-center is-revealing">
@@ -81,7 +145,7 @@
                                     <div class="feature-icon" style="height: 300px;">
 										<img src="dist/images/object.png" alt="Feature 03">
                                     </div>
-                                    <h4 class="feature-title mt-24">Interactuar con objetos diseñados para tal fin</h4>
+                                    <h4 class="feature-title mt-24 lang" key="interactWithObjects">Interact with objects</h4>
                                 </div>
                             </div>
                             <div class="feature text-center is-revealing">
@@ -89,7 +153,7 @@
                                     <div class="feature-icon" style="height: 200px;">
 										<img src="dist/images/interfaz.png" alt="Feature 04">
                                     </div>
-                                    <h4 class="feature-title mt-24">Interfaz donde realizar los cambios al modelo de forma sencilla e intuitiva</h4>
+                                    <h4 class="feature-title mt-24 lang" key="interface">Interface to make changes to the model in a simple and intuitive way</h4>
                                 </div>
                             </div>
 							<div class="feature text-center is-revealing">
@@ -97,7 +161,7 @@
                                     <div class="feature-icon" style="height: 200px;">
 										<img src="dist/images/camara.png" alt="Feature 05">
                                     </div>
-                                    <h4 class="feature-title mt-24">Debe haber una cámara que puedas mover para mostrar los distintos planos y secuencias</h4>
+                                    <h4 class="feature-title mt-24 lang" key="camera">There should be a camera that you can move to show the different shots and sequences</h4>
                                 </div>
                             </div>
                             <div class="feature text-center is-revealing">
@@ -105,7 +169,7 @@
                                     <div class="feature-icon" style="height: 200px;">
 										<img src="dist/images/poligonos.png" alt="Feature 06">
                                     </div>
-                                    <h4 class="feature-title mt-24">Que admita un número alto de polígonos, para hacer decorados y modelos bien trabajados y definidos</h4>
+                                    <h4 class="feature-title mt-24 lang" key="polygon">That admits a high number of polygons, to make decorations and models well worked and defined</h4>
                                 </div>
                             </div>
                         </div>
@@ -116,9 +180,9 @@
 			<section class="cta section">
 				<div class="container">
 					<div class="cta-inner section-inner">
-						<h3 class="section-title mt-0">¿Quieres trabajar con nosotros?</h3>
+						<h3 class="section-title mt-0 class lang" key="workWithUs">Do you want to work with us?</h3>
 						<div class="cta-cta">
-							<a class="button button-primary button-wide-mobile" href = "mailto: alberto@admincentralmail.com">Contactar</a>
+							<a class="button button-primary button-wide-mobile lang" href = "mailto: alberto@admincentralmail.com" key="contactUs">Contact Us</a>
 						</div>
                     </div>
 			</section>
